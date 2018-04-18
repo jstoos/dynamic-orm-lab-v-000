@@ -72,6 +72,4 @@ class InteractiveRecord
     end
     @result
   end
-
-
 end
