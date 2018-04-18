@@ -64,9 +64,6 @@ class InteractiveRecord
   end
 
   def self.find_by(random_attribute_hash={})
-
-    #   SELECT * FROM #{self.table_name} WHERE '#{key}.to_s' = "'#{value}.to_s'"
-
     random_attribute_hash.each do |key, value|
       sql = <<-SQL
         SELECT * FROM #{self.table_name} WHERE "#{key.to_s}" = "#{value.to_s}"
