@@ -3,7 +3,6 @@ require 'active_support/inflector'
 
 class InteractiveRecord
 
-  attr_accessor :row
 
   def self.table_name
     "#{self.to_s.downcase}s"
@@ -71,9 +70,8 @@ class InteractiveRecord
       sql = <<-SQL
         SELECT * FROM #{self.table_name} WHERE '#{key}' = "'#{value}'"
       SQL
-      @row = DB[:conn].execute(sql)
+      DB[:conn].execute(sql)
     end
-    @row
   end
 
 
