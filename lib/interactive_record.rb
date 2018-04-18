@@ -69,7 +69,7 @@ class InteractiveRecord
         SELECT * FROM #{self.table_name} WHERE '#{key}' = "'#{value}'"
       SQL
     end
-      DB[:conn].execute(sql)
+    DB[:conn].execute(sql)
   end
 
 
