@@ -3,6 +3,8 @@ require 'active_support/inflector'
 
 class InteractiveRecord
 
+  attr_accessor :row
+
   def self.table_name
     "#{self.to_s.downcase}s"
   end
