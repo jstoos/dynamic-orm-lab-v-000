@@ -67,7 +67,7 @@ class InteractiveRecord
 
     #   SELECT * FROM #{self.table_name} WHERE '#{key}.to_s' = "'#{value}.to_s'"
 
-    random_attribute_hash.collect do |key, value|
+    random_attribute_hash.each do |key, value|
       #binding.pry
       sql = <<-SQL
         SELECT * FROM #{self.table_name} WHERE '#{key}.to_s' = "'#{value}.to_s'"
